@@ -1,10 +1,11 @@
 package scala.example
 
-import scala.example.`macro`.Demo
+import scala.example.`macro`.{Demo, Obfuscate}
 
-case class User(email: String, pass: String)
+@Obfuscate("pass")
+case class User(email: String, pass: String, fname: String, lname: String)
 
 object Main extends App {
-  val obj = User("an@gmail.com", "strong_pass")
-  Demo.prettyPrint(obj)
+  val obj = User("an@gmail.com", "strong_pass", "fname", "lname")
+  println(obj)
 }

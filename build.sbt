@@ -4,7 +4,8 @@ version := "0.1"
 
 lazy val commonSettings = Seq(
   scalaVersion := "2.13.0",
-  organization := "scala.example"
+  organization := "scala.example",
+  scalacOptions += "-Ymacro-annotations"
 )
 lazy val scalaReflect = Def.setting { "org.scala-lang" % "scala-reflect" % scalaVersion.value }
 
